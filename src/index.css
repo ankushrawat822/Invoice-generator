@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.line-between-top-header{
+   height: 119px;
+ width: 2px;
+ border-radius: 8px;
+ background: black;
+}
+
+.overflowScroll{
+   display: flex;
+   flex-flow: column;
+   overflow-x: auto;
+   white-space: nowrap;
+}
+
+
+  @media only screen and (max-width: 1624px) {
+   .main-container-setWidth{
+     width: 900px;
+   }
+ }
+
+
+  @media only screen and (max-width: 1024px) {
+    .main-container-setWidth{
+      width: 800px;
+    }
+  }
+
+
+  @media only screen and (max-width: 768px) {
+     .top-header-div{
+        flex-direction: column;
+        justify-content: center;
+     }
+
+     .tax-invoice-div{
+        flex-direction: column;
+     }
+
+     .customer-info-div{
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+     }
+     .customer-po-div{
+        text-align: center;
+     }
+
+     .customer-po-div div{
+        text-align: center;
+     }
+
+     .main-container-setWidth{
+      width: 100vw;
+    }
+   
+    .bank-detail-main-div{
+      flex-direction: column;
+    }
+
+    .bank-details-lower-div-p{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+   .line-between-top-header{
+      height: 2px;
+    width: 124px;
+    border-radius: 8px;
+    background: black;
+   }
+
+   .increase-width-for-mobile{
+      width: 100%;
+   }
+    
+  }
+
+
+  @media only screen and (max-width: 640px) {
+    .mobile-visible{
+      display: flex;
+    }
+  }
+
+
+  @media only screen and (max-width: 340px) {
+   .mobile-visible{
+     display: flex;
+   }
+ }
+
+
