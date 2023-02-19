@@ -2,7 +2,7 @@ import React from 'react'
 import topLogo from './assets/top-logn.png'
 import bottonLogo from './assets/bottom-img.png'
 
-const Page1 = ({img , item , pageNo}) => {
+const Page1 = ({img , item , pageNo , noOfPage , amount}) => {
   return (
     <>
          <main className=' bg-[#f5f6fa] mt-7 print:mt-2 w-[100vw]'>
@@ -23,7 +23,7 @@ const Page1 = ({img , item , pageNo}) => {
               {/* img div */}
               <div className='flex flex-col items-center justify-center '>
                 <img src={img} alt="" />
-                <p>Building Trust Forever</p>
+                <p>Building Trust Forever </p>
               </div>
               {/* between line */}
               <div className='line-between-top-header'></div>
@@ -102,7 +102,7 @@ const Page1 = ({img , item , pageNo}) => {
 
             <div className='overflowScroll'>
               {/*items table */}
-              <table className='text-center border-collapse border-black border-2'>
+              <table className='text-center border-collapse border-black border-2 min-w-[650px]'>
                 {/* table header fixed */}
                 <thead  className='text-center border-collapse border-black border-2'>
                   <tr>
@@ -150,14 +150,14 @@ const Page1 = ({img , item , pageNo}) => {
               {/* items table ends */}
                   <div className=' border-black  border-r-2 border-l-2   h-1 w-full'></div>
               {/* gst table */}
-              <table className=' min-w-[651px] text-center border-collapse border-black border-[2px]'>
+              <table className=' min-w-[650px] text-center border-collapse border-black border-[2px]'>
                 <thead className='text-center border-collapse border-black border-[2px]'>
                   <tr>
                     <th className='text-center border-collapse border-black border-[2px] px-[10px]'>SUB TOTAL</th>
                     <th className='text-center border-collapse border-black border-[2px] px-[10px]'>SGST @ 2.5%</th>
                     <th className='text-center border-collapse border-black border-[2px] px-[10px]'>CGST @ 2.5%</th>
                     <th className='text-center border-collapse border-black border-[2px] px-[10px]'>IGST @ 5%</th>
-                    <th className='text-center border-collapse border-black border-[2px] px-[10px]'>GRAND TOTAL</th>
+                    <th className='text-center border-collapse border-black border-[2px] px-[10px]'> {`${noOfPage === pageNo ? "Grand Total": " Total"}   `} </th>
                   </tr>
                 </thead>
                 <tbody className='text-center border-collapse border-black border-[2px]'>
@@ -166,7 +166,7 @@ const Page1 = ({img , item , pageNo}) => {
                     <th className='py-1 text-center border-collapse border-black border-[2px] px-[10px]'>&#8377; 1,041.58</th>
                     <th className='py-1 text-center border-collapse border-black border-[2px] px-[10px]'>&#8377; 1,041.58</th>
                     <th className='py-1 text-center border-collapse border-black border-[2px] px-[10px]'>&#8377; 0.00</th>
-                    <th className='py-1 text-center border-collapse border-black border-[2px] px-[10px]'>&#8377; 43,746.21</th>
+                    <th className='py-1 text-center border-collapse border-black border-[2px] px-[10px]'>&#8377; {amount[pageNo-1]} </th>
                   </tr>
 
                   {/* authorised signatory column starts*/}
@@ -222,7 +222,7 @@ TAN : BLRO06752E| GSTIN : 29AADC02125Q1Z2 |</p>
             
             {/* page no div */}
             <div className='flex items-center justify-center  border-black border-b-2 border-r-2 border-l-2'>
-              <p className='font-bold pb-1'>{pageNo}</p>
+              <p className='font-bold pb-1'>{`Page ${pageNo} of ${noOfPage}`}</p>
             </div>
               
 
