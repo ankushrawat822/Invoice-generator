@@ -158,7 +158,7 @@ const Test = ({img , data , pageNo , noOfPage , amount}) => {
                    <th className='text-center border-collapse border-black border-[2px] px-[10px]'>SGST @ 2.5%</th>
                    <th className='text-center border-collapse border-black border-[2px] px-[10px]'>CGST @ 2.5%</th>
                    <th className='text-center border-collapse border-black border-[2px] px-[10px]'>IGST @ 5%</th>
-                   <th className='text-center border-collapse border-black border-[2px] px-[10px]'> {`${noOfPage === pageNo ? "Grand Total": " Total"}   `} </th>
+                   <th className='text-center border-collapse border-black border-[2px] px-[10px]'> Grand Total </th>
                  </tr>
                </thead>
                <tbody className='text-center border-collapse border-black border-[2px]'>
