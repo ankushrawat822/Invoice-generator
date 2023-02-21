@@ -9,6 +9,11 @@ import {AiFillMail} from 'react-icons/ai'
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf'
 import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
+import Test from './Test';
+
+
+import { Routes, Route } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const App = () => {
       
@@ -112,15 +117,11 @@ const printDocument = ()=>{
   "amount": 10
 }, 
 
-
-
 ]
-
 
 //  splitting data array to many subarrays of 7 
 
 let result = _.chunk(data , 7)
-
 
 //  calculating amount total start
 let AllPageAmountArr = []
@@ -165,16 +166,11 @@ if(result[n].length < 7){
 }
  
 
-
-
-
-
   return (
     <>
 
-    <main  className=' bg-[#f5f6fa] '>
-      {/* buttons */}
-      <div className=' print:hidden flex items-center justify-center gap-6 mt-5'>
+     {/* buttons */}
+  <div className=' print:hidden flex items-center justify-center gap-6 mt-5'>
       {/* print btn */}
         <button onClick={handlePrintBtn}> <AiFillPrinter className='text-[33px] text-green-500 p-1  hover:bg-[#8080803e] hover:rounded-[8px]'></AiFillPrinter></button>
         {/* mail btn */}
@@ -182,17 +178,23 @@ if(result[n].length < 7){
      
         {/* download btn */}
         <button onClick={printDocument}><BsFillCloudDownloadFill className='text-[33px] text-red-500 p-1  hover:bg-[#8080803e] hover:rounded-[8px]'></BsFillCloudDownloadFill></button>
+        <button> <Link to="/test">Test</Link></button>
       </div>
-
       
+   <Routes> 
+
+
+   <Route path='/' element={ <main  className=' bg-[#f5f6fa] '>
+    
+     
+
       <div id='componentToDownload' className='a4-style'>
     
       {/* <Page1 img={topLogo} ></Page1> */}
 
 
 
-     {  result.map((item , i) => (
-      
+     {  result.map((item , i) => (    
            <>
            {/* {console.log("i+1 is : " +  (i + 1))}
            {console.log(" result length - 1 is : " + (result.length))} */}
@@ -206,7 +208,11 @@ if(result[n].length < 7){
       </div>
     
      
-    </main>
+    </main>}/>
+
+    <Route path='/test' element={<Test  img={page2TopLogo}  noOfPage={result.length }  data={data} amount={AllPagesum}/>} />
+
+    </Routes>
 
 
     {/* <section className='w-[100vw] h-[100vh]  bg-[#f5f6fa]'></section> */}
