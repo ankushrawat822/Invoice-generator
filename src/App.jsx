@@ -178,7 +178,7 @@ if(result[n].length < 7){
      
         {/* download btn */}
         <button onClick={printDocument}><BsFillCloudDownloadFill className='text-[33px] text-red-500 p-1  hover:bg-[#8080803e] hover:rounded-[8px]'></BsFillCloudDownloadFill></button>
-        <button> <Link to="/test">Test</Link></button>
+        <button > <Link to="/test">Test</Link></button>
       </div>
       
    <Routes> 
